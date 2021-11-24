@@ -1,0 +1,43 @@
+{
+  "appData": {"name": "Version 9: New games available and few bug fixes"},
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [{
+    "name": "data",
+    "urls": [
+      "api/*"
+    ],
+    "cacheConfig": {
+      "maxAge": "36h",
+      "timeout": "10s",
+      "maxSize": 10000,
+      "strategy":"freshness"
+    }
+  }]
+}
